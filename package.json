@@ -1,11 +1,11 @@
 {
-  "name": "ubuyblues-store-admin-dashboard-client-side",
+  "name": "ciratco-store-admin-dashboard-client-side",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 5300",
+    "start": "next start -p 5900",
     "lint": "next lint"
   },
   "dependencies": {

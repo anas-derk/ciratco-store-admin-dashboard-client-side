@@ -6,23 +6,23 @@ const nextConfig = {
         removeConsole: process.env.NODE_ENV === "production",
     },
     env: {
-        BASE_API_URL: process.env.NODE_ENV === "development" ? "http://localhost:5200" : "https://api.ubuyblues.com",
-        WEBSITE_URL: process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://ubuyblues.com",
-        adminTokenNameInLocalStorage: "u-b-a-t",
-        storeName: "Ubuyblues Store",
-        adminDashboardlanguageFieldNameInLocalStorage: "ubuyblues-store-admin-dashboard-language",
-        selectedCountryByAdmin: "ubuyblues-store-admin-dashboard-country",
+        BASE_API_URL: process.env.NODE_ENV === "development" ? "http://localhost:5200" : "https://api.ciratco.com",
+        WEBSITE_URL: process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://ciratco.com",
+        adminTokenNameInLocalStorage: "c-a-t",
+        storeName: "Ciratco Store",
+        adminDashboardlanguageFieldNameInLocalStorage: "ciratco-store-admin-dashboard-language",
+        selectedCountryByAdmin: "ciratco-store-admin-dashboard-country",
         defaultLanguage: "en"
     },
     async headers() {
         return [
             {
-                source: process.env.NODE_ENV === "development" ? "//localhost:5200/(.*)" : "//api.ubuyblues.com/(.*)",
+                source: process.env.NODE_ENV === "development" ? "//localhost:5200/(.*)" : "//api.ciratco.com/(.*)",
                 headers: [
                     { key: "Access-Control-Allow-Credentials", value: "true" },
                     {
                         key: "Access-Control-Allow-Origin",
-                        value: process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://ubuyblues.com",
+                        value: process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://ciratco.com",
                     },
                     {
                         key: "Access-Control-Allow-Methods",
