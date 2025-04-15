@@ -1,5 +1,5 @@
 :root {
-  --main-color-one: #6A017A;
+  --main-color-one: #1b405a;
   --main-color-two: #00ffe1;
   --main-color-three: #dfb762;
 }
@@ -171,15 +171,15 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
+.managment-table {
+  background-color: #FFF;
+}
+
 .managment-table td, .managment-table th {
   border: 1px solid;
   padding: 15px;
   text-align: center;
   font-size: 11px;
-}
-
-.managment-table {
-  background-color: #FFF;
 }
 
 .managment-table textarea {
