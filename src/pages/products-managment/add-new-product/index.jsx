@@ -252,19 +252,23 @@ export default function AddNewProduct() {
                     setSuccessMsg(result.msg);
                     let successTimeout = setTimeout(() => {
                         setSuccessMsg("");
-                        // setProductData({
-                        //     ...productData,
-                        //     name: "",
-                        //     price: "",
-                        //     description: "",
-                        //     discount: "",
-                        //     image: null,
-                        //     threeDImage: null,
-                        //     galleryImages: [],
-                        // });
-                        // productImageFileElementRef.current.value = "";
-                        // threeDProductImageFileElementRef.current.value = "";
-                        // productGalleryImagesFilesElementRef.current.value = "";
+                        setProductData({
+                            name: "",
+                            price: "",
+                            description: "",
+                            discount: "",
+                            quantity: "",
+                            image: null,
+                            galleryImages: [],
+                            threeDImage: null,
+                        });
+                        setSearchedCategoryName("");
+                        setSearchedCategories([]);
+                        setSelectedCategories([]);
+                        setSelectedCountriesList([]);
+                        productImageFileElementRef.current.value = "";
+                        threeDProductImageFileElementRef.current.value = "";
+                        productGalleryImagesFilesElementRef.current.value = "";
                         clearTimeout(successTimeout);
                     }, 1500);
                 } else {
@@ -435,7 +439,7 @@ export default function AddNewProduct() {
                         </section>
                         <section className="quantity mb-4">
                             <input
-                                type="number"
+                                type="text"
                                 className={`form-control p-2 border-2 product-quantity-field ${formValidationErrors["quantity"] ? "border-danger mb-3" : "mb-4"}`}
                                 placeholder="Please Enter Quantity"
                                 onChange={(e) => setProductData({ ...productData, quantity: (e.target.value || e.target.value === 0) ? e.target.value.trim() : "" })}
