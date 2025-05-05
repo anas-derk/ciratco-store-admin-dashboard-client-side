@@ -728,7 +728,7 @@ export default function UpdateAndDeleteProducts() {
                                                         <input
                                                             type="text"
                                                             placeholder="Enter New Offer Description"
-                                                            defaultValue={product.offerDescription.base}
+                                                            defaultValue={product.offerDescriptionBase}
                                                             className={`form-control d-block mx-auto p-2 border-2 offer-description-field ${formValidationErrors["offerDescriptionBase"] && productIndex === selectedProductIndex ? "border-danger mb-3" : "mb-2"}`}
                                                             onChange={(e) => changeProductData(productIndex, "offerDescriptionBase", e.target.value.trim())}
                                                         />
