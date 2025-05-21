@@ -106,6 +106,7 @@ export default function AdminLogin() {
                 }
             }
         } catch (err) {
+            console.log(err);
             setWaitMsg("");
             setErrorMsg(err?.message === "Network Error" ? "Network Error" : "Sorry, Something Went Wrong, Please Try Again !");
             setTimeout(() => {
