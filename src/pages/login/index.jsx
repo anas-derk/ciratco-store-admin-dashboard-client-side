@@ -90,7 +90,7 @@ export default function AdminLogin() {
             setFormValidationErrors(errorsObject);
             if (Object.keys(errorsObject).length == 0) {
                 setWaitMsg("Please Wait To Logining ...");
-                const result = (await axios.get(`${process.env.BASE_API_URL}/admins/login?email=${email}&password=${password}&language=${process.env.defaultLanguage}`)).data;
+                const result = (await axios.get(`${process.env.BASE_API_URL}/admins/login?email=${email}&password=${encodeURIComponent(password)}&language=${process.env.defaultLanguage}`)).data;
                 if (result.error) {
                     setWaitMsg("");
                     setErrorMsg(result.msg);
@@ -106,7 +106,6 @@ export default function AdminLogin() {
                 }
             }
         } catch (err) {
-            console.log(err);
             setWaitMsg("");
             setErrorMsg(err?.message === "Network Error" ? "Network Error" : "Sorry, Something Went Wrong, Please Try Again !");
             setTimeout(() => {
