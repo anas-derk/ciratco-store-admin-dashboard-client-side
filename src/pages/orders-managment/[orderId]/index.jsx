@@ -217,7 +217,7 @@ export default function OrderDetails({ orderIdAsProperty }) {
                                                 <input
                                                     type="text"
                                                     className="form-control name"
-                                                    defaultValue={orderProduct.name}
+                                                    defaultValue={orderProduct.name["en"]}
                                                     onChange={(e) => changeOrderProductData(orderProductIndex, "name", e.target.value.trim())}
                                                     disabled={orderDetails.isDeleted || orderDetails.checkoutStatus !== "Checkout Successfull"}
                                                 />
