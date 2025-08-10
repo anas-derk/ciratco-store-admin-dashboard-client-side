@@ -38,8 +38,7 @@ export default function ShowAndHideSections() {
                         const adminDetails = result.data;
                         setAdminInfo(adminDetails);
                         if (adminDetails.isWebsiteOwner) {
-                            const res = await axios.get(`${process.env.BASE_API_URL}/appeared-sections/all-sections`);
-                            result = res.data;
+                            result = await getAllSections();
                             if (!result.error) {
                                 setAllSections(result.data);
                             }
@@ -61,6 +60,15 @@ export default function ShowAndHideSections() {
                 });
         } else router.replace("/login");
     }, []);
+
+    const getAllSections = async () => {
+        try {
+            return (await axios.get(`${process.env.BASE_API_URL}/appeared-sections/all-sections`)).data;
+        }
+        catch (err) {
+            throw err;
+        }
+    }
 
     const handleSelectAppearedSectionStatus = (sectionIndex, sectionStatus) => {
         allSections[sectionIndex].isAppeared = sectionStatus;
