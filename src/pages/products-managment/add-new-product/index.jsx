@@ -340,6 +340,7 @@ export default function AddNewProduct() {
 
     const handleSearchOfCountry = (e) => {
         const searchedCountry = e.target.value;
+        setSearchedCountry(searchedCountry);
         if (searchedCountry) {
             setFilteredCountryList(countryList.filter((country) => countries[country].name.toLowerCase().startsWith(searchedCountry.toLowerCase())));
         } else {
@@ -351,6 +352,7 @@ export default function AddNewProduct() {
         setCountryList(countryList.filter((country) => country !== countryCode));
         setFilteredCountryList(filteredCountryList.filter((country) => country !== countryCode));
         setSelectedCountriesList([...selectedCountriesList, countryCode]);
+        setSearchedCountry("");
     }
 
     const handleRemoveCountryFromCountryList = (countryCode) => {
